@@ -1,7 +1,10 @@
 import React from 'react'
+import Modal from './components/Modal'
 
 export default function App() {
   return (
-    <div>App</div>
+    <div>App
+    <Modal/> 
+    </div>
   )
 }
