@@ -6,13 +6,15 @@ export default function useFetchOnePiece(tipo) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let endpoint = ""
-        if (tipo === "personajes") endpoint = "/characters"
-        if (tipo === "tripulaciones") endpoint = "/crews"
-        if (tipo === "barcos") endpoint = "/ships"
+        let endpoint = ''
+        if (tipo === 'personajes') endpoint = '/v2/characters/en'
+        if (tipo === 'tripulaciones') endpoint = '/v2/crews/en' 
+        if (tipo === 'barcos') endpoint = '/v2/ships/en'
 
-        const respuesta = await fetch(`https://api-onepiece.com${endpoint}`)
+        const respuesta = await fetch(`https://api.api-onepiece.com${endpoint}`)
         const datos = await respuesta.json()
+        
+        console.log('DATOS OBTENIDOS:', datos)
         setData(datos)
       } catch (error) {
         console.log('Error:', error)
