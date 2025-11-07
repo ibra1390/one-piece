@@ -9,7 +9,7 @@ export default function useFetchOnePiece(tipo) {
         let endpoint = ""
         if (tipo === "personajes") endpoint = "/characters"
         if (tipo === "tripulaciones") endpoint = "/crews"
-        if (tipo === "barcos") endpoint = '/ships'
+        if (tipo === "barcos") endpoint = "/ships"
 
         const respuesta = await fetch(`https://api-onepiece.com${endpoint}`)
         const datos = await respuesta.json()
